@@ -4,9 +4,12 @@ if (isset($_POST['joketext'])){
         $pdo = new PDO('mysql:host=localhost;dbname=ijdb;charset=utf8','ijdbuser','mypassword');
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = 'INSERT INTO `joke` SET `joketext` = "' . $_POST['joketext'] . '", `jokedate` = "2022-03-13"';
-        $pdo->exec($sql);
+        $sql = 'INSERT INTO `joke` SET `joketext` = :joketext, `jokedate` = CURDATE()';
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':joketext', $_POST['joketext']);
+        $stmt->execute();
 
+        header('location: jokes.php');
      } catch(PDOException $e){
             $output = ' Database error: '.$e->getMessage() . ' in '. $e->getFile() . ' : ' . $e->getLine();
     }
