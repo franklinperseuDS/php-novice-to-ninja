@@ -8,9 +8,9 @@
         <title><?=$title?></title>
     </head>
     <body>
-        <header id="header">
+        <div id="header">
             <h1> Internet Joke Database </h1>    
-        </header>
+        </div>
         <nav>
             <ul>
                 <li><a href="index.php">Home</a></li>

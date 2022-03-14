@@ -3,10 +3,15 @@ body {
     padding: 0px;
 }
 #header {
-    background-color: aqua;
-    margin-top: 0;
-    height: 15vh;
-    display:flex;
+    background-color: rgb(103, 150, 238);
+    margin: 0;
+    padding: 0;
+    height: 7.5vh;
+    /* display:flex; */
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color:#EDEDED;
 }
 
 
@@ -18,7 +23,7 @@ nav ul {
     margin: 0px;
     padding: 1.5VH;
     list-style: none;
-    background-color: blue;
+    background-color: rgb(82, 82, 245);
     
     
     height: 3.5vh;
@@ -39,9 +44,9 @@ nav ul li a{
 }
 
 nav ul li a:hover{
-    background-color: azure;
-    color: white;
-    border-bottom: 3px solid #EA0000;
+    background-color: rgb(103, 150, 238);
+    color: #EDEDED;
+    border-bottom: 3px solid #EDEDED;
 }
 
 main{
@@ -56,5 +61,30 @@ footer {
   width: 100vw; 
   height: 3vh;
   text-align: left; 
-  background-color: bisque;
+  background-color: rgb(103, 150, 238);
+}
+
+p {
+    margin: 0%;
+    padding: 0%;
+}
+
+blockquote  {
+    margin: 0.2em;
+    padding: 0% 2em ;
+}
+
+.container {
+    width: 100vw;
+    height: 70vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    width: 50vh;
+    height: 50vh;
+
 }
