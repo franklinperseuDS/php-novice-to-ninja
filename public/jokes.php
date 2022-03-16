@@ -4,12 +4,7 @@ try{
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $sql = 'SELECT `id`,`joketext` FROM `joke`';
-    $result = $pdo->query($sql);
-
-    while ($row = $result->fetch()){
-        $jokes[] = ['id' =>$row['id'], 'joketext' =>$row['joketext']];
-    }
-    
+    $jokes = $pdo->query($sql);
     $title = `joke List`;
 
     ob_start();
