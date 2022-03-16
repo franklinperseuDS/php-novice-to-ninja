@@ -3,11 +3,11 @@ try{
     $pdo = new PDO('mysql:host=localhost;dbname=ijdb;charset=utf8','ijdbuser','mypassword');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sql = 'SELECT `joketext` FROM `joke`';
+    $sql = 'SELECT `id`,`joketext` FROM `joke`';
     $result = $pdo->query($sql);
 
     while ($row = $result->fetch()){
-        $jokes[] = $row['joketext'];
+        $jokes[] = ['id' =>$row['id'], 'joketext' =>$row['joketext']];
     }
     
     $title = `joke List`;

@@ -7,15 +7,16 @@
     <title>List of jokes</title>
 </head>
 <body>
-    
     <?php foreach ($jokes as $joke) : ?>
-        <blockquote>
-            <p>
-                <?php echo htmlspecialchars($joke, ENT_QUOTES, 'UTF-8') ?>     
-            </p>  
-        </blockquote>
+                    <blockquote>
+                        <p>
+                          <?php echo htmlspecialchars($joke['joketext'], ENT_QUOTES, 'UTF-8') ?>   
+                         </p>
+                    <form action="deletejoke.php" method="post">
+                        <input type="hidden" name="id" value=<?=$joke['id']?>>
+                        <input type="submit" value="Delete">
+                    </form>
+                    </blockquote>
     <?php endforeach;?>
-    
-    
 </body>
 </html>
