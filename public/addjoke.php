@@ -1,4 +1,5 @@
 <?php
+
 if (isset($_POST['joketext'])){
     try{
         $pdo = new PDO('mysql:host=localhost;dbname=ijdb;charset=utf8','ijdbuser','mypassword');
